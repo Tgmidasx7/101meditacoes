@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30 Meditações - Reset Mental Masculino</title>
+    <meta name="description" content="O pack definitivo de reprogramação mental para homens. Elimine a ansiedade e retome o controle em 30 dias.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config for Custom Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Outfit"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#050507',
+                            surface: '#0F1115',
+                            accent: '#00F0FF', // Cyber Cyan
+                            blue: '#2952FF',   // Deep Electric Blue
+                            text: '#E0E0E0',
+                            muted: '#94A3B8'
+                        }
+                    },
+                    boxShadow: {
+                        'neon': '0 0 20px rgba(0, 240, 255, 0.15)',
+                        'neon-strong': '0 0 30px rgba(41, 82, 255, 0.3)',
+                    },
+                    backgroundImage: {
+                        'hero-gradient': 'linear-gradient(to bottom, rgba(5,5,7,0.8), #050507), url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470&auto=format&fit=crop")',
+                        'card-gradient': 'linear-gradient(145deg, #16181D 0%, #0F1115 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Animations & Utilities */
+        body {
+            background-color: #050507;
+            color: #E0E0E0;
+            overflow-x: hidden;
+        }
+        
+        .glass-nav {
+            background: rgba(5, 5, 7, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .text-glow {
+            text-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+        }
+
+        .btn-pulse {
+            animation: pulse-glow 2s infinite;
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 240, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 240, 255, 0); }
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #FFFFFF 0%, #00F0FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Accordion Transition */
+        .faq-content {
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        .faq-content.active {
+            opacity: 1;
+        }
+        
+        /* Smooth Fade In */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, visibility;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- HEADER FIXED -->
+    <header class="fixed w-full top-0 z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-brand-accent rounded-full flex items-center justify-center text-black font-bold text-xs shadow-[0_0_15px_rgba(0,240,255,0.6)]">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+                <span class="font-display font-bold text-xl tracking-wide text-white">RESET<span class="text-brand-accent">.MIND</span></span>
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex gap-8 text-sm font-medium text-gray-300">
+                <a href="#metodo" class="hover:text-brand-accent transition-colors">O Método</a>
+                <a href="#beneficios" class="hover:text-brand-accent transition-colors">Benefícios</a>
+                <a href="#depoimentos" class="hover:text-brand-accent transition-colors">Resultados</a>
+                <a href="#faq" class="hover:text-brand-accent transition-colors">FAQ</a>
+            </nav>
+
+            <!-- CTA Button Header -->
+            <a href="https://pay.kiwify.com.br/Zfyn2Er" class="hidden md:inline-block bg-white text-black px-5 py-2 rounded-full font-bold text-sm hover:bg-brand-accent hover:scale-105 transition-all duration-300">
+                Começar Agora
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white text-xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-brand-surface border-b border-gray-800 p-6 flex-col gap-4 shadow-xl">
+            <a href="#metodo" class="block text-gray-300 hover:text-white">O Método</a>
+            <a href="#beneficios" class="block text-gray-300 hover:text-white">Benefícios</a>
+            <a href="#depoimentos" class="block text-gray-300 hover:text-white">Resultados</a>
+            <a href="https://pay.kiwify.com.br/Zfyn2Er" class="block text-center bg-brand-blue text-white py-3 rounded-lg font-bold">
+                Acessar por R$ 29,00
+            </a>
+        </div>
+    </header>
+
+    <!-- SECTION 1: HERO -->
+    <section class="relative min-h-screen flex items-center justify-center bg-hero-gradient bg-cover bg-center pt-20">
+        <div class="absolute inset-0 bg-black/60"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center fade-in-section">
+            <div class="inline-block border border-brand-accent/30 bg-brand-accent/10 px-4 py-1 rounded-full mb-6">
+                <span class="text-brand-accent text-xs font-bold tracking-widest uppercase">Método Exclusivo para Homens</span>
+            </div>
+            
+            <h1 class="font-display font-bold text-4xl md:text-6xl lg:text-7xl leading-tight mb-6 text-white">
+                30 Meditações para <span class="gradient-text">Resetar sua Mente</span> e Matar a Ansiedade.
+            </h1>
+            
+            <p class="text-lg md:text-xl text-brand-muted mb-10 max-w-2xl mx-auto leading-relaxed">
+                Uma jornada de 30 dias para reconstruir sua mentalidade, controlar suas emoções e eliminar angústia e medo — <strong class="text-white">mesmo que você nem perceba que está ansioso.</strong>
+            </p>
+            
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <a href="https://pay.kiwify.com.br/Zfyn2Er" class="btn-pulse w-full md:w-auto bg-brand-blue hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3">
+                    <span>QUERO COMEÇAR AGORA</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <span class="text-sm text-gray-400 flex items-center gap-2">
+                    <i class="fa-solid fa-lock text-green-500"></i> Acesso Imediato
+                </span>
+            </div>
+            
+            <div class="mt-12 flex items-center justify-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <!-- Trust Icons/Features -->
+                <div class="flex flex-col items-center">
+                    <i class="fa-solid fa-brain text-2xl mb-2"></i>
+                    <span class="text-xs uppercase tracking-wider">Neurociência</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fa-solid fa-bolt text-2xl mb-2"></i>
+                    <span class="text-xs uppercase tracking-wider">Foco Total</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fa-solid fa-shield-halved text-2xl mb-2"></i>
+                    <span class="text-xs uppercase tracking-wider">Anti-Stress</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Fade -->
+        <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-brand-dark to-transparent"></div>
+    </section>
+
+    <!-- SECTION 2: O QUE É (The Problem/Solution) -->
+    <section id="metodo" class="py-20 bg-brand-dark relative overflow-hidden">
+        <!-- Decorational Glow -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-blue/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+
+        <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="fade-in-section">
+                <h2 class="font-display text-3xl md:text-4xl font-bold mb-6">Não é "mais um pack místico". <br> <span class="text-brand-accent">É estratégia mental.</span></h2>
+                <p class="text-brand-muted mb-6 leading-relaxed">
+                    Este método foi criado para homens reais, que vivem pressão, responsabilidade e cobrança diária. Homens que precisam de equilíbrio para produzir e decidir, sem serem engolidos pela ansiedade.
+                </p>
+                
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-brand-accent mt-1"></i>
+                        <span class="text-gray-300">30 Meditações Guiadas (Uma por dia)</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-brand-accent mt-1"></i>
+                        <span class="text-gray-300">Reprogramação para força e foco</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-brand-accent mt-1"></i>
+                        <span class="text-gray-300">Áudios curtos (5 a 12 minutos)</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-brand-accent mt-1"></i>
+                        <span class="text-gray-300">Sem papo furado. Direto ao ponto.</span>
+                    </li>
+                </ul>
+
+                <a href="https://pay.kiwify.com.br/Zfyn2Er" class="text-brand-accent font-bold border-b border-brand-accent pb-1 hover:text-white hover:border-white transition-colors">
+                    Ver todo o conteúdo incluso <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
+                </a>
+            </div>
+
+            <div class="relative fade-in-section delay-200">
+                <!-- Visual Representation of App/Audio -->
+                <div class="bg-brand-surface border border-gray-800 rounded-2xl p-6 shadow-neon relative z-10">
+                    <div class="flex items-center justify-between mb-6 border-b border-gray-800 pb-4">
+                        <span class="text-xs font-bold text-gray-500 uppercase">Tocando agora</span>
+                        <div class="flex gap-1">
+                            <div class="w-1 h-1 bg-red-500 rounded-full"></div>
+                            <div class="w-1 h-1 bg-yellow-500 rounded-full"></div>
+                            <div class="w-1 h-1 bg-green-500 rounded-full"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-brand-blue to-purple-600 rounded-lg flex items-center justify-center text-white text-xl">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-lg">Dia 01: O Reset Inicial</h3>
+                            <p class="text-sm text-brand-muted">Eliminando o ruído mental</p>
+                        </div>
+                    </div>
+
+                    <!-- Fake Waveform -->
+                    <div class="flex items-center justify-between gap-1 h-8 mb-4 opacity-50">
+                        <div class="w-1 h-full bg-brand-accent rounded-full animate-pulse"></div>
+                        <div class="w-1 h-2/3 bg-brand-accent rounded-full"></div>
+                        <div class="w-1 h-full bg-brand-accent rounded-full animate-pulse"></div>
+                        <div class="w-1 h-1/3 bg-brand-accent rounded-full"></div>
+                        <div class="w-1 h-full bg-brand-accent rounded-full"></div>
+                        <div class="w-1 h-3/4 bg-brand-accent rounded-full animate-pulse"></div>
+                        <div class="w-1 h-1/2 bg-brand-accent rounded-full"></div>
+                        <div class="w-1 h-full bg-brand-accent rounded-full"></div>
+                        <!-- Repeat for visual -->
+                        <div class="w-1 h-2/3 bg-brand-accent rounded-full hidden md:block"></div>
+                        <div class="w-1 h-full bg-brand-accent rounded-full hidden md:block"></div>
+                        <div class="w-1 h-1/2 bg-brand-accent rounded-full hidden md:block"></div>
+                    </div>
+                    
+                    <div class="flex justify-between text-xs text-gray-500 font-mono">
+                        <span>02:14</span>
+                        <span>08:00</span>
+                    </div>
+                </div>
+                
+                <!-- Background decoration card -->
+                <div class="absolute inset-0 bg-brand-blue transform rotate-3 scale-95 rounded-2xl opacity-20 -z-0"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: PAIN POINTS (Red Alert) -->
+    <section class="py-20 bg-black border-t border-gray-900">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in-section">
+                <h2 class="font-display text-3xl md:text-4xl font-bold mb-4">A Verdade Brutal: <br>Você está perdendo o controle.</h2>
+                <p class="text-brand-muted">Você diz que "está tranquilo", mas os sinais dizem o contrário.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 fade-in-section">
+                <div class="bg-brand-surface p-6 rounded-xl border-l-4 border-red-500 hover:bg-gray-900 transition-colors">
+                    <h3 class="text-white font-bold mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-triangle-exclamation text-red-500"></i> Mente Barulhenta
+                    </h3>
+                    <p class="text-sm text-gray-400">Você tenta ignorar, mas o fluxo de pensamentos nunca para, especialmente à noite.</p>
+                </div>
+
+                <div class="bg-brand-surface p-6 rounded-xl border-l-4 border-red-500 hover:bg-gray-900 transition-colors">
+                    <h3 class="text-white font-bold mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-triangle-exclamation text-red-500"></i> Aperto no Peito
+                    </h3>
+                    <p class="text-sm text-gray-400">Angústia sem motivo aparente. Sensação de que algo ruim vai acontecer.</p>
+                </div>
+
+                <div class="bg-brand-surface p-6 rounded-xl border-l-4 border-red-500 hover:bg-gray-900 transition-colors">
+                    <h3 class="text-white font-bold mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-triangle-exclamation text-red-500"></i> Irritabilidade
+                    </h3>
+                    <p class="text-sm text-gray-400">Pavio curto com a família ou no trabalho. Qualquer coisa te tira do eixo.</p>
+                </div>
+
+                <div class="bg-brand-surface p-6 rounded-xl border-l-4 border-red-500 hover:bg-gray-900 transition-colors">
+                    <h3 class="text-white font-bold mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-triangle-exclamation text-red-500"></i> Produtividade Baixa
+                    </h3>
+                    <p class="text-sm text-gray-400">Começa muito e termina pouco. Procrastinação por excesso de preocupação.</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center fade-in-section">
+                <p class="text-xl font-medium text-white mb-6">E se você apertasse o play e sentisse <span class="text-brand-accent">alívio em 3 minutos?</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: BENEFÍCIOS -->
+    <section id="beneficios" class="py-20 bg-brand-surface relative">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="font-display text-3xl md:text-5xl font-bold text-center mb-16 fade-in-section">O que <span class="text-brand-blue">30 dias</span> podem fazer com um homem?</h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group bg-brand-dark p-8 rounded-2xl border border-gray-800 hover:border-brand-accent transition-all duration-300 fade-in-section">
+                    <div class="w-14 h-14 bg-gray-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-accent transition-colors">
+                        <i class="fa-solid fa-lungs text-2xl text-white group-hover:text-black"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Zerar a Ansiedade</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Técnicas de respiração e condução mental que reduzem imediatamente o cortisol e o estado de alerta.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group bg-brand-dark p-8 rounded-2xl border border-gray-800 hover:border-brand-accent transition-all duration-300 fade-in-section delay-100">
+                    <div class="w-14 h-14 bg-gray-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-accent transition-colors">
+                        <i class="fa-solid fa-crosshairs text-2xl text-white group-hover:text-black"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Clareza e Foco</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Quando o caos interno some, tudo fica claro. Você pensa melhor, age melhor e sente controle novamente.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group bg-brand-dark p-8 rounded-2xl border border-gray-800 hover:border-brand-accent transition-all duration-300 fade-in-section delay-200">
+                    <div class="w-14 h-14 bg-gray-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-accent transition-colors">
+                        <i class="fa-solid fa-bed text-2xl text-white group-hover:text-black"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Sono Profundo</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Sem rolar na cama. Sem mente acelerada. Sem loop de preocupações. Desligue o sistema e descanse.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: HOW IT WORKS -->
+    <section class="py-20 bg-brand-dark overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="w-full md:w-1/2 fade-in-section">
+                    <h2 class="font-display text-3xl md:text-4xl font-bold mb-8">Simples, prático e direto. <br> <span class="text-gray-500">Como todo homem gosta.</span></h2>
+                    
+                    <div class="space-y-8 relative">
+                        <!-- Connecting Line -->
+                        <div class="absolute left-6 top-8 bottom-8 w-0.5 bg-gray-800 -z-0"></div>
+
+                        <!-- Step 1 -->
+                        <div class="relative flex gap-6 z-10">
+                            <div class="w-12 h-12 bg-brand-surface border border-brand-accent text-brand-accent rounded-full flex items-center justify-center font-bold text-xl shrink-0">1</div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-2">Escolha o áudio do dia</h4>
+                                <p class="text-gray-400">Você só precisa de 5 a 12 minutos. Encaixa em qualquer rotina.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="relative flex gap-6 z-10">
+                            <div class="w-12 h-12 bg-brand-surface border border-brand-accent text-brand-accent rounded-full flex items-center justify-center font-bold text-xl shrink-0">2</div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-2">Aperte o play</h4>
+                                <p class="text-gray-400">Use fones. Feche os olhos. Sinta o áudio organizar sua mente.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="relative flex gap-6 z-10">
+                            <div class="w-12 h-12 bg-brand-accent text-black rounded-full flex items-center justify-center font-bold text-xl shrink-0">3</div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-2">Sinta a mudança física</h4>
+                                <p class="text-gray-400">Respiração volta ao normal. Coração desacelera. Você volta ao comando.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-1/2 bg-gray-900 rounded-2xl p-8 border border-gray-800 fade-in-section delay-200">
+                    <h3 class="text-lg font-bold text-white mb-4 border-b border-gray-700 pb-4">A Ciência por trás</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-black p-4 rounded-lg">
+                            <i class="fa-solid fa-wave-square text-brand-blue mb-2"></i>
+                            <p class="text-sm font-medium text-gray-300">Frequências Binaurais</p>
+                        </div>
+                        <div class="bg-black p-4 rounded-lg">
+                            <i class="fa-solid fa-lungs text-brand-blue mb-2"></i>
+                            <p class="text-sm font-medium text-gray-300">Relaxamento Progressivo</p>
+                        </div>
+                        <div class="bg-black p-4 rounded-lg">
+                            <i class="fa-solid fa-anchor text-brand-blue mb-2"></i>
+                            <p class="text-sm font-medium text-gray-300">Ancoragem Mental</p>
+                        </div>
+                        <div class="bg-black p-4 rounded-lg">
+                            <i class="fa-solid fa-brain text-brand-blue mb-2"></i>
+                            <p class="text-sm font-medium text-gray-300">Redução de Cortisol</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: QUOTES -->
+    <section class="py-16 bg-brand-blue relative overflow-hidden flex items-center justify-center">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <i class="fa-solid fa-quote-left text-4xl text-black/30 mb-6 block"></i>
+            <h2 class="font-display text-2xl md:text-4xl font-bold text-white mb-4 uppercase tracking-wider">
+                "Se você não governar suas emoções, alguém vai governar por você."
+            </h2>
+            <div class="h-1 w-20 bg-white mx-auto mt-6"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: PROVA SOCIAL -->
+    <section id="depoimentos" class="py-20 bg-brand-dark">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="font-display text-3xl font-bold text-center mb-12 fade-in-section">Homens reais. <span class="text-brand-accent">Resultados reais.</span></h2>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Review 1 -->
+                <div class="bg-brand-surface p-6 rounded-xl border border-gray-800 fade-in-section">
+                    <div class="flex gap-1 text-yellow-500 text-xs mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 text-sm italic">"Eu não sabia que tinha ansiedade. Só percebi quando comecei a sentir paz de verdade. Minha produtividade dobrou."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center font-bold">F</div>
+                        <div>
+                            <p class="text-white font-bold text-sm">Felipe</p>
+                            <p class="text-gray-500 text-xs">29 anos, TI</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-brand-surface p-6 rounded-xl border border-gray-800 fade-in-section delay-100">
+                    <div class="flex gap-1 text-yellow-500 text-xs mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 text-sm italic">"Uso no carro antes do trabalho. Meu dia mudou. Minha atitude mudou. Parei de brigar por besteira."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center font-bold">R</div>
+                        <div>
+                            <p class="text-white font-bold text-sm">Rogério</p>
+                            <p class="text-gray-500 text-xs">38 anos, Empreendedor</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-brand-surface p-6 rounded-xl border border-gray-800 fade-in-section delay-200">
+                    <div class="flex gap-1 text-yellow-500 text-xs mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 text-sm italic">"É surreal como 5 minutos mudam tudo. Vale muito mais que o preço. Recomendo pra qualquer um."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center font-bold">H</div>
+                        <div>
+                            <p class="text-white font-bold text-sm">Henrique</p>
+                            <p class="text-gray-500 text-xs">41 anos, Supervisor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: OFFER (High Conversion) -->
+    <section class="py-20 bg-gradient-to-b from-brand-dark to-black relative">
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            
+            <div class="bg-card-gradient border border-gray-800 rounded-3xl p-8 md:p-12 text-center shadow-neon-strong fade-in-section">
+                <span class="bg-brand-blue text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4 inline-block">Oferta Especial</span>
+                
+                <h2 class="font-display text-3xl md:text-5xl font-bold text-white mb-2">O Pack Completo</h2>
+                <h3 class="text-brand-muted text-xl mb-8">30 Meditações Masculinas</h3>
+
+                <div class="flex justify-center items-center gap-4 mb-8">
+                    <span class="text-gray-500 text-xl line-through decoration-red-500">R$ 97,00</span>
+                    <span class="text-5xl font-bold text-brand-accent">R$ 29,00</span>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4 text-left max-w-lg mx-auto mb-10">
+                    <div class="flex items-center gap-2 text-gray-300 text-sm">
+                        <i class="fa-solid fa-check-circle text-brand-accent"></i> 30 Áudios Guiados
+                    </div>
+                    <div class="flex items-center gap-2 text-gray-300 text-sm">
+                        <i class="fa-solid fa-check-circle text-brand-accent"></i> Reprogramação Mental
+                    </div>
+                    <div class="flex items-center gap-2 text-gray-300 text-sm">
+                        <i class="fa-solid fa-check-circle text-brand-accent"></i> Acesso Vitalício
+                    </div>
+                    <div class="flex items-center gap-2 text-gray-300 text-sm">
+                        <i class="fa-solid fa-check-circle text-brand-accent"></i> Download Liberado
+                    </div>
+                </div>
+
+                <a href="https://pay.kiwify.com.br/Zfyn2Er" class="btn-pulse w-full md:w-2/3 mx-auto bg-green-600 hover:bg-green-500 text-white py-4 rounded-xl font-bold text-xl flex items-center justify-center gap-2 transition-all">
+                    QUERO MEU ACESSO AGORA <i class="fa-solid fa-lock"></i>
+                </a>
+                
+                <p class="mt-4 text-xs text-gray-500"><i class="fa-solid fa-shield-halved"></i> Pagamento seguro via Kiwify</p>
+
+                <!-- Guarantee -->
+                <div class="mt-8 pt-8 border-t border-gray-800 flex flex-col items-center">
+                    <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-brand-accent mb-2">
+                        <i class="fa-solid fa-rotate-left"></i>
+                    </div>
+                    <p class="text-white font-bold text-sm">Garantia Incondicional de 7 Dias</p>
+                    <p class="text-gray-500 text-xs mt-1 max-w-sm">Se você não sentir alívio e clareza nos primeiros dias, devolvemos seu dinheiro. Sem perguntas.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 9: FAQ -->
+    <section id="faq" class="py-20 bg-brand-surface">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="font-display text-3xl font-bold text-center mb-12">Perguntas Frequentes</h2>
+
+            <div class="space-y-4">
+                <!-- Item 1 -->
+                <div class="border border-gray-800 rounded-lg overflow-hidden fade-in-section">
+                    <button class="faq-btn w-full text-left p-4 bg-brand-dark hover:bg-gray-900 transition-colors flex justify-between items-center text-white font-medium">
+                        Preciso saber meditar?
+                        <i class="fa-solid fa-chevron-down text-brand-accent"></i>
+                    </button>
+                    <div class="faq-content bg-gray-900/50">
+                        <div class="p-4 text-gray-400 text-sm">
+                            Não. Todo o processo é guiado. Você só precisa apertar o play e seguir as instruções simples. É direto ao ponto.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="border border-gray-800 rounded-lg overflow-hidden fade-in-section delay-100">
+                    <button class="faq-btn w-full text-left p-4 bg-brand-dark hover:bg-gray-900 transition-colors flex justify-between items-center text-white font-medium">
+                        Funciona pra quem tem mente muito acelerada?
+                        <i class="fa-solid fa-chevron-down text-brand-accent"></i>
+                    </button>
+                    <div class="faq-content bg-gray-900/50">
+                        <div class="p-4 text-gray-400 text-sm">
+                            Funciona especialmente para esse tipo de mente. As técnicas de respiração forçam fisiologicamente seu corpo a desacelerar.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="border border-gray-800 rounded-lg overflow-hidden fade-in-section delay-200">
+                    <button class="faq-btn w-full text-left p-4 bg-brand-dark hover:bg-gray-900 transition-colors flex justify-between items-center text-white font-medium">
+                        Posso ouvir offline?
+                        <i class="fa-solid fa-chevron-down text-brand-accent"></i>
+                    </button>
+                    <div class="faq-content bg-gray-900/50">
+                        <div class="p-4 text-gray-400 text-sm">
+                            Sim. Você pode baixar os arquivos para seu celular e ouvir no avião, no carro (parado) ou onde não tiver internet.
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Item 4 -->
+                 <div class="border border-gray-800 rounded-lg overflow-hidden fade-in-section delay-200">
+                    <button class="faq-btn w-full text-left p-4 bg-brand-dark hover:bg-gray-900 transition-colors flex justify-between items-center text-white font-medium">
+                        Como recebo o acesso?
+                        <i class="fa-solid fa-chevron-down text-brand-accent"></i>
+                    </button>
+                    <div class="faq-content bg-gray-900/50">
+                        <div class="p-4 text-gray-400 text-sm">
+                            Imediatamente após o pagamento, você receberá um e-mail da Kiwify com seu login e senha para acessar a área de membros.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-12 border-t border-gray-900 text-center">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col items-center">
+            <div class="flex items-center gap-2 mb-4">
+                <div class="w-6 h-6 bg-brand-accent rounded-full flex items-center justify-center text-black font-bold text-xs">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+                <span class="font-display font-bold text-white tracking-wide">RESET.MIND</span>
+            </div>
+            <p class="text-gray-600 text-sm mb-6">Todos os direitos reservados &copy; 2026</p>
+            <div class="flex gap-4 text-xs text-gray-600">
+                <a href="#" class="hover:text-white">Termos de Uso</a>
+                <a href="#" class="hover:text-white">Políticas de Privacidade</a>
+                <a href="mailto:suporte@mindemotions.com" class="hover:text-white">Suporte</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        });
+
+        // FAQ Accordion Logic
+        const accordions = document.querySelectorAll('.faq-btn');
+
+        accordions.forEach(acc => {
+            acc.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                const icon = this.querySelector('i');
+                
+                // Close others if you want only one open at a time (Optional)
+                /*
+                accordions.forEach(other => {
+                    if (other !== this) {
+                        other.nextElementSibling.style.maxHeight = null;
+                        other.nextElementSibling.classList.remove('active');
+                        other.querySelector('i').classList.remove('rotate-180');
+                    }
+                });
+                */
+
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    content.classList.remove('active');
+                    icon.style.transform = "rotate(0deg)";
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    content.classList.add('active');
+                    icon.style.transform = "rotate(180deg)";
+                    icon.style.transition = "transform 0.3s";
+                }
+            });
+        });
+
+        // Intersection Observer for Fade-In Animation
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
